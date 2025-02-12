@@ -1,0 +1,15 @@
+To run adhesion dynamics simulations of trphos or schizonts in a shear flow, go through following steps:
+
+1. Go to the respective directory.
+2. To compile, run " make clean ; make" which will produce executable "MAIN"
+3. Run the executable with following command
+    ./MAIN wall_velocity file_identifier number_of_knobs
+
+wall_velocity -> sets the shear rate 
+file_idenitifer -> a number that will be assigned to output files (see below example)
+number_of_knobs -> Number of knobs/receptors in a simulation. Maximum number of knobs are 1000.
+
+Example: ./MAIN 0.5 1 500
+
+This will have wall velocity of 0.5, shear rate of (0.5/Lz) and 500 number of knobs. 
+The simulation will output three files: data_1.dat (coordinates of vertices), data_1.dump (same coordinates data in lammps dump file format) and fp_1.dat (foorprints data).
